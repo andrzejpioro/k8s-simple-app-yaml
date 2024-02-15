@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-simple-app-yaml
+  name: k8s-simple-app-yaml
+  namespace: app-001-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-simple-app-yaml
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8s-simple-app-yaml
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources: {}
+status: {}
